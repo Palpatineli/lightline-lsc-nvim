@@ -36,26 +36,3 @@ function! lightline#lsc#ok() abort
     let l:error_no = len(getqflist())
     return l:error_no == 0 ? s:indicator_ok : ''
 endfunction
-
-function! lightline#ale#checking() abort
-  return ale#engine#IsCheckingBuffer(bufnr('')) ? s:indicator_checking : ''
-endfunction
-
-let g:expand_component = {
-  \ 'linter_checking': 'lightline#lsc#checking',
-  \ 'linter_warnings': 'lightline#lsc#warnings',
-  \ 'linter_errors': 'lightline#lsc#errors',
-  \ 'linter_ok': 'lightline#lsc#ok',
-\ }
-
-call extend(g:lightline.component_extend, g:expand_component)
-
-let g:component_type = {
-  \ 'linter_checking': 'left',
-  \ 'linter_warnings': 'warning',
-  \ 'linter_errors': 'error',
-  \ 'linter_ok': 'left',
-\ }
-
-call extend(g:lightline.component_type, g:component_type)
-g:lightline.active.right = [['linter_checking', 'linter_errors', 'linter_ok', 'linter_warnings']] + g:lightline.active.right

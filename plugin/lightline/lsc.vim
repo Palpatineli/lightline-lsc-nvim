@@ -1,4 +1,4 @@
-augroup lightline#lsc
+augroup lightline_lsc
     au!
     au User LanguageClientDiagnosticsChanged call lightline#update()
     au User LanguageClientStarted call lightline#lsc#lspStarted()
