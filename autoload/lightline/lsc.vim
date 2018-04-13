@@ -26,7 +26,7 @@ function! lightline#lsc#errors() abort
         return ''
     endif
     let l:error_no = len(getqflist())
-    return l:error_no == 0 ? '' : printf(s:indicator_warnings . " %d", error_no)
+    return l:error_no == 0 ? '' : printf(s:indicator_errors . " %d", error_no)
 endfunction
 
 function! lightline#lsc#ok() abort
