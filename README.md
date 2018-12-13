@@ -4,10 +4,6 @@ This plugin provides [LanguageClient-neovim](https://github.com/autozimu/Languag
 
 In many ways, this is a conversion of [lightline-ale](https://github.com/maximbaz/lightline-ale) to work with [LanguageClient-neovim](https://github.com/autozimu/LanguageClient-neovim).
 
-## Missing functions
-
-This plugin does not tell the difference between warning and errors, as LanguageClient-neovim doesn't seem to have that query function...
-
 ## Installation
 
 ```viml
@@ -73,6 +69,10 @@ The indicator to use when the server is not started. Default is `Starting...`.
 ##### `g:lightline#ale#indicator_errors`
 
 The indicator to use when there are errors. Default is `E:`.
+
+##### `g:lightline#ale#indicator_warnings`
+
+The indicator to use when there are warnings. Default is `W:`.
 
 ##### `g:lightline#ale#indicator_ok`
 
